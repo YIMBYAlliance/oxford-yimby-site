@@ -1,0 +1,619 @@
+@import "tailwindcss";
+
+/* ==========================================================================
+   Tailwind v4 Theme — Custom Design Tokens
+   ========================================================================== */
+
+@theme {
+  --color-teal: #73AB96;
+  --color-teal-dark: #5a9480;
+  --color-teal-light: #a3cebe;
+  --color-teal-subtle: #e8f4ef;
+  --color-teal-glow: rgba(115, 171, 150, 0.35);
+
+  --color-charcoal: #353741;
+  --color-charcoal-light: #4a4c58;
+  --color-charcoal-soft: #5c5e6a;
+
+  --color-rose: #BE93A3;
+  --color-rose-light: #d4b3c0;
+  --color-rose-glow: rgba(190, 147, 163, 0.3);
+
+  --color-off-white: #f7f9f8;
+  --color-gray-50: #f0f4f2;
+  --color-gray-100: #e4e9e7;
+  --color-gray-200: #c9d1cd;
+  --color-gray-text: #6b7280;
+
+  --font-family-sans: 'Lato', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+
+  --radius-xs: 6px;
+  --radius-sm: 10px;
+  --radius-default: 16px;
+}
+
+/* ==========================================================================
+   Glassmorphism Tokens (used as CSS custom properties)
+   ========================================================================== */
+
+:root {
+  --glass-bg: rgba(255, 255, 255, 0.6);
+  --glass-border: rgba(115, 171, 150, 0.2);
+  --glass-shadow: 0 8px 32px rgba(53, 55, 65, 0.08);
+  --glass-blur: blur(20px);
+}
+
+/* ==========================================================================
+   Base / Reset Overrides
+   ========================================================================== */
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-size: 17px;
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+/* ==========================================================================
+   Navigation — Glassmorphism + Scroll State
+   ========================================================================== */
+
+.nav {
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.nav.scrolled {
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  padding-top: 12px;
+  padding-bottom: 12px;
+  box-shadow: 0 1px 24px rgba(53, 55, 65, 0.06);
+  border-bottom: 1px solid var(--glass-border);
+}
+
+.nav.scrolled .nav-logo { color: var(--color-charcoal); }
+.nav.scrolled .nav-logo:hover { color: var(--color-charcoal); }
+.nav.scrolled .nav-links a { color: var(--color-charcoal-soft); }
+.nav.scrolled .nav-links a:hover { color: var(--color-charcoal); }
+.nav.scrolled .nav-toggle span { background: var(--color-charcoal); }
+
+/* Nav link underline slide */
+.nav-links a:not(.nav-cta) {
+  position: relative;
+}
+
+.nav-links a:not(.nav-cta)::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--color-teal);
+  border-radius: 1px;
+  transition: width 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.nav-links a:not(.nav-cta):hover::after {
+  width: 100%;
+}
+
+/* Nav CTA button */
+.nav-cta {
+  background: var(--color-teal);
+  color: #fff !important;
+  padding: 10px 24px;
+  border-radius: 100px;
+  font-weight: 700;
+  font-size: 14px;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 2px 12px var(--color-teal-glow);
+}
+
+.nav-cta:hover {
+  background: var(--color-teal-dark);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 20px var(--color-teal-glow);
+}
+
+/* Mobile menu */
+.mobile-menu {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s;
+}
+
+.mobile-menu.active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.mobile-menu .nav-cta {
+  padding: 14px 36px;
+}
+
+/* Nav toggle hamburger */
+.nav-toggle span {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: #fff;
+  border-radius: 2px;
+  transition: all 0.3s;
+}
+
+/* ==========================================================================
+   Hero
+   ========================================================================== */
+
+.hero-bg {
+  background-color: var(--color-charcoal);
+  background-size: cover;
+  background-position: center bottom;
+}
+
+/* Teal overlay gradient */
+.hero-bg::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(135deg,
+      rgba(115, 171, 150, 0.85) 0%,
+      rgba(53, 55, 65, 0.75) 50%,
+      rgba(53, 55, 65, 0.9) 100%);
+  z-index: 1;
+}
+
+/* Soft radial glow accents */
+.hero-bg::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 70% 50% at 20% 30%, rgba(115, 171, 150, 0.25) 0%, transparent 60%),
+    radial-gradient(ellipse 50% 40% at 80% 70%, rgba(190, 147, 163, 0.15) 0%, transparent 50%);
+  z-index: 2;
+}
+
+/* Hero eyebrow badge */
+.hero-eyebrow {
+  background: rgba(115, 171, 150, 0.12);
+  border: 1px solid rgba(115, 171, 150, 0.25);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+/* Hero CTA button pulse */
+.hero-btn {
+  position: relative;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 4px 24px var(--color-teal-glow);
+}
+
+.hero-btn:hover {
+  background: var(--color-teal-dark);
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 40px var(--color-teal-glow);
+}
+
+.hero-btn::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 100px;
+  box-shadow: 0 0 0 0 var(--color-teal-glow);
+  animation: btnPulse 3s ease-in-out infinite;
+}
+
+/* Hero scroll indicator */
+.hero-scroll-line {
+  width: 1px;
+  height: 40px;
+  background: linear-gradient(to bottom, rgba(115, 171, 150, 0.5), transparent);
+  animation: scrollPulse 2s ease-in-out infinite;
+}
+
+@keyframes scrollPulse {
+  0%, 100% { opacity: 0.4; transform: scaleY(1); }
+  50% { opacity: 1; transform: scaleY(1.2); }
+}
+
+@keyframes btnPulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(115, 171, 150, 0.3); }
+  50% { box-shadow: 0 0 0 12px rgba(115, 171, 150, 0); }
+}
+
+/* ==========================================================================
+   Stats Bar — Glass Cards
+   ========================================================================== */
+
+.stats-grid {
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-shadow), 0 0 60px rgba(115, 171, 150, 0.06);
+}
+
+.stat {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.stat.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.stat + .stat::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 20%;
+  height: 60%;
+  width: 1px;
+  background: var(--glass-border);
+}
+
+/* Stagger stats */
+.stat:nth-child(2) { transition-delay: 0.12s; }
+.stat:nth-child(3) { transition-delay: 0.24s; }
+
+/* ==========================================================================
+   Wave Dividers
+   ========================================================================== */
+
+.divider {
+  line-height: 0;
+  overflow: hidden;
+}
+
+.divider svg {
+  display: block;
+  width: 100%;
+  height: 48px;
+}
+
+.divider--white {
+  color: white;
+  background: var(--color-off-white);
+}
+
+.divider--alt {
+  color: var(--color-off-white);
+  background: white;
+}
+
+.divider--cta {
+  color: var(--color-teal-subtle);
+  background: var(--color-off-white);
+}
+
+/* ==========================================================================
+   Section Decorative Elements
+   ========================================================================== */
+
+/* Section divider line */
+.section--alt::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--glass-border), transparent);
+}
+
+/* Eyebrow bar accent */
+.eyebrow-bar {
+  display: inline-block;
+  width: 24px;
+  height: 3px;
+  background: var(--color-teal);
+  border-radius: 2px;
+  margin-right: 10px;
+  vertical-align: middle;
+  position: relative;
+  top: -1px;
+}
+
+/* Decorative dot grid */
+.decor-dots {
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  opacity: 0.12;
+  background-image: radial-gradient(var(--color-teal) 2px, transparent 2px);
+  background-size: 16px 16px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ==========================================================================
+   Scroll Animations
+   ========================================================================== */
+
+[data-animate] {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+[data-animate].visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ==========================================================================
+   Chart Containers — Glass Effect
+   ========================================================================== */
+
+.chart-container {
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-shadow);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.chart-container:hover {
+  box-shadow: var(--glass-shadow), 0 0 40px rgba(115, 171, 150, 0.08);
+  border-color: rgba(115, 171, 150, 0.3);
+  transform: scale(1.01);
+}
+
+.chart-container canvas {
+  width: 100% !important;
+  height: auto !important;
+}
+
+/* Chart callout box */
+.chart-callout {
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--glass-border);
+  box-shadow: 0 4px 16px rgba(115, 171, 150, 0.06);
+}
+
+/* ==========================================================================
+   Principle Cards — Glass Effect + Hover
+   ========================================================================== */
+
+.principle {
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-shadow);
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.principle:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 48px rgba(53, 55, 65, 0.1), 0 0 40px rgba(115, 171, 150, 0.08);
+  border-color: rgba(115, 171, 150, 0.35);
+}
+
+.principle-icon {
+  transition: all 0.3s;
+}
+
+.principle:hover .principle-icon {
+  background: var(--color-teal);
+  color: white;
+  transform: scale(1.1) translateY(-2px);
+}
+
+/* ==========================================================================
+   Alliance Box
+   ========================================================================== */
+
+.alliance {
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-shadow);
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.alliance.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ==========================================================================
+   Housing Image
+   ========================================================================== */
+
+.housing-image {
+  box-shadow: var(--glass-shadow);
+  border: 1px solid var(--glass-border);
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.housing-image.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.housing-caption {
+  background: var(--glass-bg);
+}
+
+/* ==========================================================================
+   CTA Section Decorative
+   ========================================================================== */
+
+.section--cta::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--glass-border), transparent);
+}
+
+.section--cta::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 40% 50% at 10% 50%, rgba(115, 171, 150, 0.1) 0%, transparent 60%),
+    radial-gradient(ellipse 30% 40% at 90% 30%, rgba(190, 147, 163, 0.08) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+/* ==========================================================================
+   Signup Form — Glass Effect
+   ========================================================================== */
+
+.form-row {
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-shadow);
+  transition: all 0.3s;
+}
+
+.form-row:focus-within {
+  border-color: var(--color-teal);
+  box-shadow: var(--glass-shadow), 0 0 0 4px rgba(115, 171, 150, 0.12);
+}
+
+.form-row input[type="email"] {
+  flex: 1;
+  padding: 14px 20px;
+  font-size: 15px;
+  font-family: var(--font-family-sans);
+  border: none;
+  border-radius: 100px;
+  background: transparent;
+  color: var(--color-charcoal);
+  outline: none;
+}
+
+.form-row input[type="email"]::placeholder {
+  color: var(--color-gray-text);
+}
+
+.form-row button {
+  padding: 14px 28px;
+  font-size: 15px;
+  font-family: var(--font-family-sans);
+  font-weight: 700;
+  border: none;
+  border-radius: 100px;
+  background: var(--color-teal);
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  white-space: nowrap;
+  box-shadow: 0 2px 12px var(--color-teal-glow);
+}
+
+.form-row button:hover {
+  background: var(--color-teal-dark);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 20px var(--color-teal-glow);
+}
+
+/* ==========================================================================
+   Footer
+   ========================================================================== */
+
+.footer-col a {
+  transition: color 0.2s;
+}
+
+.footer-col a:hover {
+  color: var(--color-teal-light);
+}
+
+/* ==========================================================================
+   Responsive Overrides
+   ========================================================================== */
+
+@media (max-width: 960px) {
+  .chart-block,
+  .chart-block--reverse {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .chart-block--reverse .chart-text { order: 1; }
+  .chart-block--reverse .chart-container { order: 2; }
+}
+
+@media (max-width: 768px) {
+  body {
+    font-size: 16px;
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+  .nav-toggle {
+    display: flex;
+  }
+
+  .mobile-menu {
+    display: flex;
+  }
+
+  .hero-scroll {
+    display: none;
+  }
+
+  .stat + .stat::before {
+    left: 15%;
+    top: 0;
+    width: 70%;
+    height: 1px;
+  }
+
+  .chart-callout {
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .form-row {
+    flex-direction: column;
+    border-radius: var(--radius-default);
+    padding: 8px;
+  }
+
+  .form-row input[type="email"] {
+    text-align: center;
+    border-radius: var(--radius-sm);
+  }
+
+  .form-row button {
+    width: 100%;
+    padding: 16px;
+    border-radius: var(--radius-sm);
+  }
+}
