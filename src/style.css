@@ -73,6 +73,71 @@ a:hover {
   color: var(--teal);
 }
 
+/* ==========================================================================
+   Accessibility — skip link & visually-hidden
+   ========================================================================== */
+
+.skip-link {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  z-index: 2000;
+  padding: 12px 20px;
+  background: var(--charcoal);
+  color: #fff;
+  border-radius: var(--radius-sm);
+  font-weight: 700;
+  font-size: 14px;
+  transform: translateY(calc(-100% - 1rem - 4px));
+  transition: transform 0.2s ease;
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+  outline: 2px solid var(--teal);
+  outline-offset: 2px;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.absolute-offscreen {
+  position: absolute;
+  left: -5000px;
+}
+
+/* ==========================================================================
+   Reduced motion
+   ========================================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  [data-animate],
+  .stat,
+  .alliance,
+  .principle-card {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
 .container {
   max-width: var(--container);
   margin: 0 auto;
@@ -257,8 +322,16 @@ a:hover {
   position: absolute;
   inset: 0;
   background-color: var(--charcoal);
-  background-size: cover;
-  background-position: center bottom;
+}
+
+.hero-image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center bottom;
+  z-index: 0;
 }
 
 /* Teal overlay gradient */
@@ -573,6 +646,15 @@ a:hover {
   color: var(--gray-text);
   line-height: 1.75;
   margin-bottom: 28px;
+}
+
+.chart-source {
+  margin-top: 14px;
+  font-size: 11px;
+  color: var(--gray-text);
+  text-align: right;
+  font-style: italic;
+  opacity: 0.75;
 }
 
 .chart-callout {
@@ -1174,6 +1256,29 @@ a:hover {
   background: var(--teal-dark);
   transform: translateY(-1px);
   box-shadow: 0 4px 20px var(--teal-glow);
+}
+
+.signup-message {
+  min-height: 1.5em;
+  margin-top: 16px;
+  font-size: 14px;
+  font-weight: 600;
+  text-align: center;
+  transition: color 0.2s;
+  color: transparent;
+}
+
+.signup-message[data-state="pending"] {
+  color: var(--gray-text);
+  font-weight: 500;
+}
+
+.signup-message[data-state="success"] {
+  color: var(--teal-dark);
+}
+
+.signup-message[data-state="error"] {
+  color: #b94a4a;
 }
 
 .signup-note {

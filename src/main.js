@@ -1,3 +1,9 @@
+// Self-hosted Lato — Vite bundles each weight as a separate hashed asset
+import '@fontsource/lato/300.css'
+import '@fontsource/lato/400.css'
+import '@fontsource/lato/700.css'
+import '@fontsource/lato/900.css'
+
 import './style.css'
 import Chart from 'chart.js/auto'
 
@@ -24,7 +30,9 @@ import Chart from 'chart.js/auto'
 
   navToggle.addEventListener('click', function () {
     mobileMenu.classList.toggle('active');
-    document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
+    var isOpen = mobileMenu.classList.contains('active');
+    document.body.style.overflow = isOpen ? 'hidden' : '';
+    navToggle.setAttribute('aria-expanded', String(isOpen));
   });
 
   mobileMenu.querySelectorAll('a').forEach(function (link) {
@@ -519,3 +527,8 @@ import Chart from 'chart.js/auto'
   });
 
 })();
+
+// Inline signup handler
+if (document.getElementById('mc-embedded-subscribe-form')) {
+  import('./signup.js')
+}

@@ -5,11 +5,28 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Oxford YIMBY — Making Oxford Affordable</title>
   <meta name="description" content="Oxford has a housing crisis. We're campaigning to fix it by building more homes. Join us.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
+  <meta name="theme-color" content="#73AB96">
+
+  <!-- Open Graph / Twitter -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Oxford has a housing crisis. We're here to fix it.">
+  <meta property="og:description" content="We're campaigning to build more homes in Oxford — so everyone can afford to live in this city.">
+  <meta property="og:url" content="https://oxfordyimby.org">
+  <meta property="og:site_name" content="Oxford YIMBY">
+  <meta property="og:image" content="https://oxfordyimby.org/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@oxfordyimby">
+  <meta name="twitter:title" content="Oxford has a housing crisis. We're here to fix it.">
+  <meta name="twitter:description" content="We're campaigning to build more homes in Oxford — so everyone can afford to live in this city.">
+  <meta name="twitter:image" content="https://oxfordyimby.org/og-image.jpg">
+
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 </head>
 <body>
+
+  <a href="#hero" class="skip-link">Skip to content</a>
 
   <!-- Navigation -->
   <nav class="nav" id="nav">
@@ -20,7 +37,7 @@
         <a href="#solution">The Solution</a>
         <a href="#join" class="nav-cta">Join Us</a>
       </div>
-      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu">
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobile-menu">
         <span></span>
         <span></span>
         <span></span>
@@ -29,7 +46,7 @@
   </nav>
 
   <!-- Mobile Menu -->
-  <div class="mobile-menu" id="mobile-menu">
+  <div class="mobile-menu" id="mobile-menu" role="dialog" aria-modal="true" aria-label="Site navigation">
     <a href="#problem">The Problem</a>
     <a href="#solution">The Solution</a>
     <a href="#join" class="nav-cta">Join Us</a>
@@ -37,7 +54,9 @@
 
   <!-- Hero -->
   <section class="hero" id="hero">
-    <div class="hero-bg" style="background-image: url('img/radcliffe-1.jpg');"></div>
+    <div class="hero-bg">
+      <img src="img/radcliffe-1.jpg" alt="" fetchpriority="high" decoding="async" class="hero-image">
+    </div>
     <div class="hero-content">
       <p class="hero-eyebrow">Yes In My Back Yard</p>
       <h1 class="hero-title">Oxford has a<br>housing crisis.</h1>
@@ -90,7 +109,8 @@
           </div>
         </div>
         <div class="chart-container">
-          <canvas id="chart-rent"></canvas>
+          <canvas id="chart-rent" role="img" aria-label="Line chart: average monthly rent in Oxford rose from approximately £1,391 in 2016 to £1,923 in 2026, far outpacing wage growth"></canvas>
+          <p class="chart-source">Source: ONS Private Rental Market Statistics, ASHE earnings (Oxford).</p>
         </div>
       </div>
 
@@ -105,7 +125,8 @@
           </div>
         </div>
         <div class="chart-container">
-          <canvas id="chart-cities"></canvas>
+          <canvas id="chart-cities" role="img" aria-label="Bar chart comparing house price to income ratios across UK cities. Oxford is 11x, close to London at 12x, well above the UK average of 8x"></canvas>
+          <p class="chart-source">Source: ONS House Price to Workplace-Based Earnings Ratio.</p>
         </div>
       </div>
 
@@ -120,7 +141,8 @@
           </div>
         </div>
         <div class="chart-container">
-          <canvas id="chart-supply"></canvas>
+          <canvas id="chart-supply" role="img" aria-label="Bar chart showing Oxford's housing supply gap: approximately 1,300 homes needed each year, with only 272-790 actually built"></canvas>
+          <p class="chart-source">Source: Oxford City Council housing delivery returns; Oxfordshire Housing &amp; Growth Deal target.</p>
         </div>
       </div>
     </div>
@@ -435,16 +457,18 @@
 
         <div class="signup-form">
           <!-- Mailchimp Embedded Form -->
-          <form action="https://oxfordyimby.us2.list-manage.com/subscribe/post?u=ed3bef3a68d92194b717fecc5&amp;id=6c385188a0" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" target="_blank" novalidate>
+          <form action="https://oxfordyimby.us2.list-manage.com/subscribe/post?u=ed3bef3a68d92194b717fecc5&amp;id=6c385188a0" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form">
             <div class="form-row">
-              <input type="email" name="EMAIL" placeholder="Your email address" required aria-label="Email address">
+              <label for="mce-EMAIL" class="sr-only">Email address</label>
+              <input id="mce-EMAIL" type="email" name="EMAIL" placeholder="Your email address" required autocomplete="email">
               <button type="submit" name="subscribe">Sign up</button>
             </div>
-            <!-- Bot prevention -->
-            <div style="position: absolute; left: -5000px;" aria-hidden="true">
+            <!-- Mailchimp honeypot — must remain empty -->
+            <div aria-hidden="true" class="absolute-offscreen">
               <input type="text" name="b_ed3bef3a68d92194b717fecc5_6c385188a0" tabindex="-1" value="">
             </div>
           </form>
+          <p id="signup-message" class="signup-message" role="status" aria-live="polite"></p>
           <p class="signup-note">No spam. Unsubscribe anytime.</p>
         </div>
       </div>
@@ -467,7 +491,7 @@
           <div class="footer-col">
             <h4>Links</h4>
             <a href="https://yimbyalliance.org" target="_blank" rel="noopener">YIMBY Alliance</a>
-            <a href="privacy-policy.html">Privacy Policy</a>
+            <a href="/privacy.html">Privacy Policy</a>
           </div>
           <div class="footer-col">
             <h4>Contact</h4>
