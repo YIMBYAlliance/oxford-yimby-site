@@ -59,9 +59,73 @@ body {
   overflow-x: hidden;
 }
 
+body.menu-open {
+  overflow: hidden;
+}
+
 a {
   text-decoration: none;
   transition: color 0.2s;
+}
+
+/* ==========================================================================
+   Accessibility — skip link & visually-hidden
+   ========================================================================== */
+
+.skip-link {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  z-index: 2000;
+  padding: 12px 20px;
+  background: var(--color-charcoal);
+  color: #fff;
+  border-radius: var(--radius-sm);
+  font-weight: 700;
+  font-size: 14px;
+  transform: translateY(calc(-100% - 1rem - 4px));
+  transition: transform 0.2s ease;
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+  outline: 2px solid var(--color-teal);
+  outline-offset: 2px;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ==========================================================================
+   Reduced motion — kill animations & transitions for users who ask for it
+   ========================================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  [data-animate],
+  .stat,
+  .alliance,
+  .housing-image {
+    opacity: 1 !important;
+    transform: none !important;
+  }
 }
 
 /* ==========================================================================
@@ -127,7 +191,7 @@ a {
   box-shadow: 0 4px 20px var(--color-teal-glow);
 }
 
-/* Mobile menu */
+/* Mobile menu — visible-flex on mobile via Tailwind, gated by opacity */
 .mobile-menu {
   opacity: 0;
   pointer-events: none;
@@ -159,8 +223,16 @@ a {
 
 .hero-bg {
   background-color: var(--color-charcoal);
-  background-size: cover;
-  background-position: center bottom;
+}
+
+.hero-image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center bottom;
+  z-index: 0;
 }
 
 /* Teal overlay gradient */
@@ -382,6 +454,16 @@ a {
   height: auto !important;
 }
 
+/* Chart source attribution */
+.chart-source {
+  margin-top: 14px;
+  font-size: 11px;
+  color: var(--color-gray-text);
+  text-align: right;
+  font-style: italic;
+  opacity: 0.75;
+}
+
 /* Chart callout box */
 .chart-callout {
   background: var(--glass-bg);
@@ -540,6 +622,38 @@ a {
   box-shadow: 0 4px 20px var(--color-teal-glow);
 }
 
+/* Signup status message — replaces the bare Mailchimp confirmation page */
+.signup-message {
+  min-height: 1.5em;
+  margin-top: 16px;
+  font-size: 14px;
+  font-weight: 600;
+  text-align: center;
+  transition: color 0.2s;
+  color: transparent;
+}
+
+.signup-message[data-state="pending"] {
+  color: var(--color-gray-text);
+  font-weight: 500;
+}
+
+.signup-message[data-state="success"] {
+  color: var(--color-teal-dark);
+}
+
+.signup-message[data-state="error"] {
+  color: #b94a4a;
+}
+
+/* Solid nav variant — used on subpages like /privacy where there's no hero */
+.nav--solid {
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border-bottom: 1px solid var(--glass-border);
+}
+
 /* ==========================================================================
    Footer
    ========================================================================== */
@@ -570,18 +684,6 @@ a {
 @media (max-width: 768px) {
   body {
     font-size: 16px;
-  }
-
-  .nav-links {
-    display: none;
-  }
-
-  .nav-toggle {
-    display: flex;
-  }
-
-  .mobile-menu {
-    display: flex;
   }
 
   .hero-scroll {

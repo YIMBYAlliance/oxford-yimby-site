@@ -1,4 +1,29 @@
-import Chart from 'chart.js/auto'
+import {
+  Chart,
+  LineController,
+  BarController,
+  LineElement,
+  BarElement,
+  PointElement,
+  LinearScale,
+  CategoryScale,
+  Filler,
+  Tooltip,
+  Legend,
+} from 'chart.js'
+
+Chart.register(
+  LineController,
+  BarController,
+  LineElement,
+  BarElement,
+  PointElement,
+  LinearScale,
+  CategoryScale,
+  Filler,
+  Tooltip,
+  Legend,
+)
 
 // Brand colors
 const TEAL = '#73AB96'
@@ -6,6 +31,9 @@ const CHARCOAL = '#353741'
 const ROSE = '#BE93A3'
 const GRAY_LIGHT = '#e4e9e7'
 const GRAY_TEXT = '#6b7280'
+
+const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+const isNarrowViewport = () => window.matchMedia('(max-width: 640px)').matches
 
 // Chart.js defaults
 Chart.defaults.font.family = "'Lato', -apple-system, sans-serif"
@@ -18,6 +46,9 @@ Chart.defaults.plugins.tooltip.bodyFont = { size: 13 }
 Chart.defaults.plugins.tooltip.padding = { top: 10, bottom: 10, left: 14, right: 14 }
 Chart.defaults.plugins.tooltip.cornerRadius = 8
 Chart.defaults.plugins.tooltip.displayColors = false
+
+const animationFor = (duration, easing = 'easeOutQuart') =>
+  prefersReducedMotion ? false : { duration, easing }
 
 function createRentChart() {
   const ctx = document.getElementById('chart-rent')
@@ -72,7 +103,7 @@ function createRentChart() {
     options: {
       responsive: true,
       maintainAspectRatio: true,
-      aspectRatio: 1.5,
+      aspectRatio: isNarrowViewport() ? 1.1 : 1.5,
       interaction: { mode: 'index', intersect: false },
       scales: {
         x: {
@@ -109,7 +140,7 @@ function createRentChart() {
           },
         },
       },
-      animation: { duration: 1800, easing: 'easeOutQuart' },
+      animation: animationFor(1800),
     },
   })
 }
@@ -147,7 +178,7 @@ function createCitiesChart() {
     options: {
       responsive: true,
       maintainAspectRatio: true,
-      aspectRatio: 1.5,
+      aspectRatio: isNarrowViewport() ? 0.9 : 1.5,
       indexAxis: 'y',
       scales: {
         x: {
@@ -165,7 +196,7 @@ function createCitiesChart() {
           ticks: {
             font: { size: 12 },
             color: (context) => {
-              const label = context.tick ? context.tick.label : ''
+              const label = context?.tick?.label ?? ''
               if (label === 'Oxford') return TEAL
               if (label === 'UK Average') return ROSE
               return GRAY_TEXT
@@ -180,7 +211,7 @@ function createCitiesChart() {
           },
         },
       },
-      animation: { duration: 1400, easing: 'easeOutQuart' },
+      animation: animationFor(1400),
     },
   })
 }
@@ -230,7 +261,7 @@ function createSupplyChart() {
     options: {
       responsive: true,
       maintainAspectRatio: true,
-      aspectRatio: 1.5,
+      aspectRatio: isNarrowViewport() ? 1.1 : 1.5,
       scales: {
         x: {
           grid: { display: false },
@@ -262,7 +293,7 @@ function createSupplyChart() {
           },
         },
       },
-      animation: { duration: 1400, easing: 'easeOutQuart' },
+      animation: animationFor(1400),
     },
   })
 }
