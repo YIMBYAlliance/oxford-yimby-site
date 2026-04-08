@@ -5,39 +5,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Oxford YIMBY — Making Oxford Affordable</title>
   <meta name="description" content="Oxford has a housing crisis. We're campaigning to fix it by building more homes. Join us.">
-  <meta name="theme-color" content="#73AB96">
-
-  <!-- Open Graph / Twitter -->
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="Oxford has a housing crisis. We're here to fix it.">
-  <meta property="og:description" content="We're campaigning to build more homes in Oxford — so everyone can afford to live in this city.">
-  <meta property="og:url" content="https://oxfordyimby.org">
-  <meta property="og:site_name" content="Oxford YIMBY">
-  <meta property="og:image" content="https://oxfordyimby.org/og-image.jpg">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:site" content="@oxfordyimby">
-  <meta name="twitter:title" content="Oxford has a housing crisis. We're here to fix it.">
-  <meta name="twitter:description" content="We're campaigning to build more homes in Oxford — so everyone can afford to live in this city.">
-  <meta name="twitter:image" content="https://oxfordyimby.org/og-image.jpg">
-
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
 </head>
-<body class="font-sans text-charcoal bg-off-white">
-
-  <a href="#hero" class="skip-link">Skip to content</a>
+<body>
 
   <!-- Navigation -->
-  <nav class="nav fixed top-0 left-0 right-0 z-[1000] py-5" id="nav">
-    <div class="max-w-[1140px] mx-auto px-6 flex items-center justify-between">
-      <a href="#hero" class="nav-logo text-[17px] font-black tracking-[0.06em] text-white uppercase">OXFORD <span class="text-teal">YIMBY</span></a>
-      <div class="nav-links hidden md:flex items-center gap-8">
-        <a href="#problem" class="text-white/80 text-sm font-bold tracking-[0.02em] hover:text-white">The Problem</a>
-        <a href="#solution" class="text-white/80 text-sm font-bold tracking-[0.02em] hover:text-white">The Solution</a>
+  <nav class="nav" id="nav">
+    <div class="nav-inner">
+      <a href="#" class="nav-logo">OXFORD <span>YIMBY</span></a>
+      <div class="nav-links">
+        <a href="#problem">The Problem</a>
+        <a href="#solution">The Solution</a>
         <a href="#join" class="nav-cta">Join Us</a>
       </div>
-      <button class="nav-toggle md:hidden flex flex-col gap-[5px] bg-transparent border-none cursor-pointer p-1" id="nav-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobile-menu">
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu">
         <span></span>
         <span></span>
         <span></span>
@@ -46,243 +29,464 @@
   </nav>
 
   <!-- Mobile Menu -->
-  <div class="mobile-menu md:hidden flex fixed inset-0 z-[999] bg-white/95 backdrop-blur-[30px] flex-col items-center justify-center gap-8" id="mobile-menu" role="dialog" aria-modal="true" aria-label="Site navigation">
-    <a href="#problem" class="text-charcoal text-2xl font-bold">The Problem</a>
-    <a href="#solution" class="text-charcoal text-2xl font-bold">The Solution</a>
+  <div class="mobile-menu" id="mobile-menu">
+    <a href="#problem">The Problem</a>
+    <a href="#solution">The Solution</a>
     <a href="#join" class="nav-cta">Join Us</a>
   </div>
 
   <!-- Hero -->
-  <section class="hero relative min-h-screen flex items-center justify-center px-6 pt-[120px] pb-20 overflow-hidden" id="hero">
-    <div class="hero-bg absolute inset-0">
-      <img src="img/radcliffe-1.jpg" alt="" fetchpriority="high" decoding="async" class="hero-image">
+  <section class="hero" id="hero">
+    <div class="hero-bg" style="background-image: url('img/radcliffe-1.jpg');"></div>
+    <div class="hero-content">
+      <p class="hero-eyebrow">Yes In My Back Yard</p>
+      <h1 class="hero-title">Oxford has a<br>housing crisis.</h1>
+      <p class="hero-subtitle">We're campaigning to fix it by building more homes, so everyone can afford to live in this city.</p>
+      <a href="#join" class="hero-btn">Join the movement</a>
     </div>
-    <div class="hero-content relative z-[3] text-center max-w-[800px]">
-      <p class="hero-eyebrow inline-block text-xs font-bold tracking-[0.2em] uppercase text-teal-light mb-7 py-2.5 px-6 rounded-full">Yes In My Back Yard</p>
-      <h1 class="text-[clamp(44px,7vw,82px)] font-black leading-[1.05] text-white tracking-[-0.025em] mb-6">Oxford has a<br>housing crisis.</h1>
-      <p class="text-[clamp(17px,2.2vw,20px)] font-light text-white/80 max-w-[520px] mx-auto mb-11 leading-[1.7]">We're campaigning to fix it by building more homes — so everyone can afford to live in this city.</p>
-      <a href="#join" class="hero-btn inline-flex items-center gap-2 bg-teal text-white py-[18px] px-10 rounded-full text-base font-bold">Join the movement</a>
-    </div>
-    <div class="hero-scroll absolute bottom-10 left-1/2 -translate-x-1/2 z-[3] flex flex-col items-center gap-3">
-      <span class="text-[11px] font-bold tracking-[0.15em] uppercase text-white/60">Scroll to explore</span>
+    <div class="hero-scroll">
+      <span>Scroll to explore</span>
       <div class="hero-scroll-line"></div>
     </div>
   </section>
 
   <!-- Stats Bar -->
-  <section class="relative z-10 -mt-10 px-0">
-    <div class="max-w-[1140px] mx-auto px-6">
-      <div class="stats-grid grid grid-cols-3 max-w-[900px] mx-auto rounded-[16px] overflow-hidden max-md:grid-cols-1 max-md:rounded-[10px] max-md:mx-6">
-        <div class="stat relative text-center py-9 px-6 max-md:py-7" data-animate>
-          <span class="stat-number text-[clamp(42px,6vw,64px)] font-black text-teal leading-none tracking-[-0.03em]" data-count="50">0</span><span class="text-[clamp(30px,4.5vw,48px)] font-black text-teal leading-none">%</span>
-          <span class="block text-[13px] font-normal text-gray-text mt-2">Rent increase in 10 years</span>
+  <section class="stats-bar">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat" data-animate>
+          <span class="stat-number" data-count="38">0</span><span class="stat-suffix">%</span>
+          <span class="stat-label">Rent increase since 2016</span>
         </div>
-        <div class="stat relative text-center py-9 px-6 max-md:py-7" data-animate>
-          <span class="text-[clamp(30px,4.5vw,48px)] font-black text-teal leading-none">£</span><span class="stat-number text-[clamp(42px,6vw,64px)] font-black text-teal leading-none tracking-[-0.03em]" data-count="1547">0</span>
-          <span class="block text-[13px] font-normal text-gray-text mt-2">Average monthly rent</span>
+        <div class="stat" data-animate>
+          <span class="stat-prefix">£</span><span class="stat-number" data-count="1923">0</span>
+          <span class="stat-label">Average monthly rent</span>
         </div>
-        <div class="stat relative text-center py-9 px-6 max-md:py-7" data-animate>
-          <span class="stat-number text-[clamp(42px,6vw,64px)] font-black text-teal leading-none tracking-[-0.03em]" data-count="12">0</span><span class="text-[clamp(30px,4.5vw,48px)] font-black text-teal leading-none">x</span>
-          <span class="block text-[13px] font-normal text-gray-text mt-2">House price to income ratio</span>
+        <div class="stat" data-animate>
+          <span class="stat-number" data-count="11">0</span><span class="stat-suffix">x</span>
+          <span class="stat-label">House price to income ratio</span>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Wave divider: stats → problem -->
-  <div class="divider divider--white">
-    <svg viewBox="0 0 1440 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M0,40 C360,0 720,60 1080,20 C1260,0 1380,30 1440,20 L1440,60 L0,60 Z" fill="currentColor"/>
-    </svg>
-  </div>
-
   <!-- The Problem -->
-  <section class="py-[110px] bg-white relative max-md:py-20" id="problem">
-    <div class="max-w-[1140px] mx-auto px-6 relative">
-      <!-- Decorative accent -->
-      <div class="decor-dots absolute top-20 right-0" aria-hidden="true"></div>
-
-      <div class="text-center max-w-[600px] mx-auto mb-20 max-md:mb-13" data-animate>
-        <p class="text-xs font-bold tracking-[0.2em] uppercase text-teal mb-4"><span class="eyebrow-bar"></span>The Problem</p>
-        <h2 class="text-[clamp(32px,4.5vw,48px)] font-black leading-[1.1] tracking-[-0.02em] text-charcoal mb-5">Oxford is becoming<br>unaffordable</h2>
-        <p class="text-lg font-light text-gray-text leading-[1.7]">The numbers tell a clear story. Rents are rising, house prices are out of reach, and we're not building enough homes to keep up.</p>
+  <section class="section section--white" id="problem">
+    <div class="container">
+      <div class="section-header" data-animate>
+        <p class="section-eyebrow">The Problem</p>
+        <h2 class="section-title">Oxford is becoming unaffordable</h2>
+        <p class="section-subtitle">The numbers tell a clear story. Rents are rising, house prices are out of reach, and we're not building enough homes to keep up.</p>
       </div>
 
       <!-- Chart 1: Rent Trends -->
-      <div class="chart-block grid grid-cols-[1fr_1.4fr] gap-14 items-center mb-[100px] max-[960px]:grid-cols-1 max-[960px]:gap-8 max-md:mb-16" data-animate>
+      <div class="chart-block" data-animate>
         <div class="chart-text">
-          <h3 class="text-[28px] font-black tracking-[-0.015em] mb-4 text-charcoal max-md:text-2xl">Rents have skyrocketed</h3>
-          <p class="text-base font-light text-gray-text leading-[1.75] mb-7">Average rents in Oxford have risen relentlessly over the past decade, far outpacing wage growth. What cost £1,000 a month in 2014 now costs over £1,500.</p>
-          <div class="chart-callout inline-flex items-baseline gap-3.5 py-[18px] px-7 rounded-[10px]">
-            <span class="text-[34px] font-black text-teal tracking-[-0.02em] leading-none">+50%</span>
-            <span class="text-sm font-normal text-gray-text">rent increase since 2014</span>
+          <h3>Rents have skyrocketed</h3>
+          <p>Average rents in Oxford have risen relentlessly over the past decade. What cost &pound;1,391 a month in 2016 now costs &pound;1,923.</p>
+          <div class="chart-callout">
+            <span class="chart-callout-number">+38%</span>
+            <span class="chart-callout-label">rent increase since 2016</span>
           </div>
         </div>
-        <div class="chart-container rounded-[16px] p-7">
-          <canvas id="chart-rent" role="img" aria-label="Line chart: average monthly rent in Oxford rose from approximately £1,020 in 2014 to £1,547 in 2024, far outpacing wage growth"></canvas>
-          <p class="chart-source">Source: ONS Private Rental Market Statistics, ASHE earnings (Oxford). <!-- TODO: verify exact dataset before launch --></p>
+        <div class="chart-container">
+          <canvas id="chart-rent"></canvas>
         </div>
       </div>
 
       <!-- Chart 2: City Comparison -->
-      <div class="chart-block chart-block--reverse grid grid-cols-[1.4fr_1fr] gap-14 items-center mb-[100px] max-[960px]:grid-cols-1 max-[960px]:gap-8 max-md:mb-16" data-animate>
-        <div class="chart-text max-[960px]:order-1">
-          <h3 class="text-[28px] font-black tracking-[-0.015em] mb-4 text-charcoal max-md:text-2xl">Oxford is an outlier</h3>
-          <p class="text-base font-light text-gray-text leading-[1.75] mb-7">Compared to similar UK cities, Oxford's housing costs are extraordinarily high relative to local incomes. This isn't inevitable — it's a choice we've made by not building enough.</p>
-          <div class="chart-callout inline-flex items-baseline gap-3.5 py-[18px] px-7 rounded-[10px]">
-            <span class="text-[34px] font-black text-teal tracking-[-0.02em] leading-none">12x</span>
-            <span class="text-sm font-normal text-gray-text">house price to income ratio</span>
+      <div class="chart-block chart-block--reverse" data-animate>
+        <div class="chart-text">
+          <h3>Oxford is an outlier</h3>
+          <p>Compared to similar UK cities, Oxford's housing costs are extraordinarily high relative to local incomes. This isn't inevitable: it's a choice we've made by not building enough.</p>
+          <div class="chart-callout">
+            <span class="chart-callout-number">11x</span>
+            <span class="chart-callout-label">house price to income ratio</span>
           </div>
         </div>
-        <div class="chart-container rounded-[16px] p-7 max-[960px]:order-2">
-          <canvas id="chart-cities" role="img" aria-label="Bar chart comparing house price to income ratios across UK cities. Oxford is the second-highest at 12.1, just behind London at 12.8 and well above the UK average of 7.0"></canvas>
-          <p class="chart-source">Source: ONS House Price to Workplace-Based Earnings Ratio, latest available year. <!-- TODO: verify exact year before launch --></p>
+        <div class="chart-container">
+          <canvas id="chart-cities"></canvas>
         </div>
       </div>
 
       <!-- Chart 3: Supply Gap -->
-      <div class="chart-block grid grid-cols-[1fr_1.4fr] gap-14 items-center max-[960px]:grid-cols-1 max-[960px]:gap-8" data-animate>
+      <div class="chart-block" data-animate>
         <div class="chart-text">
-          <h3 class="text-[28px] font-black tracking-[-0.015em] mb-4 text-charcoal max-md:text-2xl">We're falling further behind</h3>
-          <p class="text-base font-light text-gray-text leading-[1.75] mb-7">Every year, Oxford needs around 1,400 new homes to keep up with demand. Every year, we build a fraction of that. The deficit keeps growing.</p>
-          <div class="chart-callout inline-flex items-baseline gap-3.5 py-[18px] px-7 rounded-[10px]">
-            <span class="text-[34px] font-black text-teal tracking-[-0.02em] leading-none">8,000+</span>
-            <span class="text-sm font-normal text-gray-text">home deficit and growing</span>
+          <h3>We're falling further behind</h3>
+          <p>Every year, Oxford needs around 1,300 new homes to keep up with demand. Most years, we build far less than that. The deficit keeps growing.</p>
+          <div class="chart-callout chart-callout--stacked">
+            <span class="chart-callout-number">Rising gap</span>
+            <span class="chart-callout-label">between homes built and local demand</span>
           </div>
         </div>
-        <div class="chart-container rounded-[16px] p-7">
-          <canvas id="chart-supply" role="img" aria-label="Bar chart showing Oxford's housing supply gap: approximately 1,400 homes needed each year, with only 400-800 actually built"></canvas>
-          <p class="chart-source">Source: Oxford City Council housing delivery returns; Oxfordshire Housing &amp; Growth Deal target. <!-- TODO: verify exact dataset before launch --></p>
+        <div class="chart-container">
+          <canvas id="chart-supply"></canvas>
         </div>
       </div>
     </div>
   </section>
-
-  <!-- Wave divider: problem → solution -->
-  <div class="divider divider--alt">
-    <svg viewBox="0 0 1440 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M0,20 C240,50 480,0 720,30 C960,60 1200,10 1440,40 L1440,60 L0,60 Z" fill="currentColor"/>
-    </svg>
-  </div>
 
   <!-- The Solution -->
-  <section class="section--alt py-[110px] bg-off-white relative max-md:py-20" id="solution">
-    <div class="max-w-[1140px] mx-auto px-6 relative">
-      <!-- Decorative accent -->
-      <div class="decor-dots absolute top-[60px] left-0" aria-hidden="true"></div>
+  <section class="section section--solution-hero" id="solution">
+    <!-- Animated background -->
+    <div class="solution-hero-bg"></div>
 
-      <div class="text-center max-w-[600px] mx-auto mb-20 max-md:mb-13" data-animate>
-        <p class="text-xs font-bold tracking-[0.2em] uppercase text-teal mb-4"><span class="eyebrow-bar"></span>The Solution</p>
-        <h2 class="text-[clamp(32px,4.5vw,48px)] font-black leading-[1.1] tracking-[-0.02em] text-charcoal mb-5">Build more homes</h2>
-        <p class="text-lg font-light text-gray-text leading-[1.7]">It's not complicated. Oxford needs more housing — and we're campaigning to make it happen.</p>
-      </div>
+    <!-- Dark overlay -->
+    <div class="solution-hero-overlay"></div>
 
-      <div class="grid grid-cols-3 gap-6 mb-16 max-[960px]:grid-cols-1 max-[960px]:max-w-[440px] max-[960px]:mx-auto" data-animate>
-        <div class="principle text-center py-11 px-7 rounded-[16px]">
-          <div class="principle-icon w-[60px] h-[60px] mx-auto mb-6 flex items-center justify-center bg-teal-subtle rounded-[10px] text-teal">
-            <svg class="w-7 h-7" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-              <rect x="8" y="20" width="32" height="22" rx="2" stroke="currentColor" stroke-width="2.5"/>
-              <path d="M24 8L6 20h36L24 8z" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round"/>
-              <rect x="18" y="30" width="12" height="12" rx="1" stroke="currentColor" stroke-width="2.5"/>
-            </svg>
-          </div>
-          <h3 class="text-xl font-bold mb-3 text-charcoal">Build up &amp; out</h3>
-          <p class="text-[15px] font-light text-gray-text leading-[1.7]">Use existing land better. Replace low-density sprawl near the city centre with beautiful, walkable, mid-rise neighbourhoods — like Edinburgh or Paris.</p>
-        </div>
-        <div class="principle text-center py-11 px-7 rounded-[16px]">
-          <div class="principle-icon w-[60px] h-[60px] mx-auto mb-6 flex items-center justify-center bg-teal-subtle rounded-[10px] text-teal">
-            <svg class="w-7 h-7" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-              <circle cx="24" cy="16" r="8" stroke="currentColor" stroke-width="2.5"/>
-              <path d="M8 42c0-8.837 7.163-16 16-16s16 7.163 16 16" stroke="currentColor" stroke-width="2.5"/>
-            </svg>
-          </div>
-          <h3 class="text-xl font-bold mb-3 text-charcoal">Homes for everyone</h3>
-          <p class="text-[15px] font-light text-gray-text leading-[1.7]">More housing means more choice — for students, families, key workers, and everyone who wants to call Oxford home.</p>
-        </div>
-        <div class="principle text-center py-11 px-7 rounded-[16px]">
-          <div class="principle-icon w-[60px] h-[60px] mx-auto mb-6 flex items-center justify-center bg-teal-subtle rounded-[10px] text-teal">
-            <svg class="w-7 h-7" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-              <path d="M24 4v40M4 24h40" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
-              <circle cx="24" cy="24" r="18" stroke="currentColor" stroke-width="2.5"/>
-            </svg>
-          </div>
-          <h3 class="text-xl font-bold mb-3 text-charcoal">Growth is good</h3>
-          <p class="text-[15px] font-light text-gray-text leading-[1.7]">A growing Oxford means more jobs, stronger local businesses, better public services, and a more vibrant city for everyone.</p>
+    <!-- Content -->
+    <div class="solution-hero-content">
+      <!-- Header -->
+      <div class="container">
+        <div class="section-header section-header--light" data-animate>
+          <p class="section-eyebrow">The Solution</p>
+          <h2 class="section-title">Build more homes</h2>
+          <p class="section-subtitle">It's not complicated. Oxford needs more housing, and we're campaigning to make it happen.</p>
         </div>
       </div>
 
-      <!-- Subtle housing image -->
-      <div class="housing-image max-w-[680px] mx-auto my-12 rounded-[16px] overflow-hidden" data-animate>
-        <img src="img/houses-2.jpg" alt="Victorian terraced houses — the kind of gentle density Oxford needs more of" loading="lazy" class="w-full h-auto block">
-        <p class="housing-caption text-center text-sm font-normal italic text-gray-text py-4 px-6">Beautiful, gentle density — this is what building more looks like.</p>
+      <!-- Interactive City Builder -->
+      <div class="city-builder" data-animate>
+        <div class="city-builder-inner">
+          <!-- Icon Palette -->
+          <div class="city-palette">
+            <div class="palette-item" draggable="true" data-type="home">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+                <polyline points="9 22 9 12 15 12 15 22"/>
+              </svg>
+              <span>Home</span>
+            </div>
+            <div class="palette-item" draggable="true" data-type="tram">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <rect x="4" y="4" width="16" height="14" rx="2"/>
+                <path d="M4 11h16M8 18v3m8-3v3"/>
+                <circle cx="8" cy="15" r="1"/>
+                <circle cx="16" cy="15" r="1"/>
+              </svg>
+              <span>Tram</span>
+            </div>
+            <div class="palette-item" draggable="true" data-type="bus">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <rect x="3" y="6" width="18" height="13" rx="2"/>
+                <path d="M3 12h18"/>
+                <circle cx="8" cy="16" r="1"/>
+                <circle cx="16" cy="16" r="1"/>
+              </svg>
+              <span>Bus</span>
+            </div>
+            <div class="palette-item" draggable="true" data-type="bike">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <circle cx="5.5" cy="17.5" r="3.5"/>
+                <circle cx="18.5" cy="17.5" r="3.5"/>
+                <path d="M15 6a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm-3 11.5V14l-3-3 4-3 2 3h3"/>
+              </svg>
+              <span>Bike</span>
+            </div>
+          </div>
+
+          <!-- Map Canvas -->
+          <div class="city-map" id="city-map">
+            <svg class="map-background" viewBox="0 0 500 400" preserveAspectRatio="xMidYMid slice">
+              <!-- Base layer with subtle grid -->
+              <defs>
+                <pattern id="grid" width="50" height="50" patternUnits="userSpaceOnUse">
+                  <path d="M 50 0 L 0 0 0 50" fill="none" stroke="rgba(255, 255, 255, 0.03)" stroke-width="0.5"/>
+                </pattern>
+                <linearGradient id="riverGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                  <stop offset="0%" style="stop-color:rgba(100, 150, 220, 0.2);stop-opacity:1" />
+                  <stop offset="50%" style="stop-color:rgba(100, 150, 220, 0.4);stop-opacity:1" />
+                  <stop offset="100%" style="stop-color:rgba(100, 150, 220, 0.2);stop-opacity:1" />
+                </linearGradient>
+              </defs>
+
+              <rect x="0" y="0" width="500" height="400" fill="rgba(0, 0, 0, 0.15)"/>
+              <rect x="0" y="0" width="500" height="400" fill="url(#grid)"/>
+
+              <!-- River -->
+              <g>
+                <!-- River body - snakey/serpentine, flowing upward from left to right -->
+                <path d="M 0 260
+                         C 60 235, 120 265, 180 240
+                         C 240 215, 280 250, 340 225
+                         C 400 200, 450 220, 500 190
+                         L 500 225
+                         C 450 250, 400 235, 340 255
+                         C 280 275, 240 250, 180 275
+                         C 120 295, 60 270, 0 295
+                         Z"
+                      fill="rgba(100, 150, 220, 0.35)"
+                      stroke="rgba(100, 150, 220, 0.6)"
+                      stroke-width="1.5"/>
+              </g>
+
+              <!-- Parks / Green spaces with tree icons -->
+              <defs>
+                <!-- Tree icon template -->
+                <g id="tree">
+                  <rect x="-1" y="4" width="2" height="4" fill="rgba(90, 130, 110, 0.6)"/>
+                  <circle cx="0" cy="2" r="3.5" fill="rgba(115, 171, 150, 0.7)"/>
+                </g>
+              </defs>
+
+              <g>
+                <!-- Park 1 (north) -->
+                <rect x="25" y="30" width="85" height="70" rx="4" fill="rgba(115, 171, 150, 0.18)" stroke="rgba(115, 171, 150, 0.4)" stroke-width="1.5"/>
+                <!-- Trees in park 1 -->
+                <use href="#tree" x="40" y="48"/>
+                <use href="#tree" x="60" y="45"/>
+                <use href="#tree" x="80" y="50"/>
+                <use href="#tree" x="95" y="47"/>
+                <use href="#tree" x="50" y="65"/>
+                <use href="#tree" x="70" y="68"/>
+                <use href="#tree" x="90" y="65"/>
+                <use href="#tree" x="45" y="85"/>
+                <use href="#tree" x="65" y="88"/>
+                <use href="#tree" x="85" y="83"/>
+
+                <!-- Park 2 (east) -->
+                <rect x="385" y="35" width="90" height="75" rx="4" fill="rgba(115, 171, 150, 0.18)" stroke="rgba(115, 171, 150, 0.4)" stroke-width="1.5"/>
+                <!-- Trees in park 2 -->
+                <use href="#tree" x="400" y="50"/>
+                <use href="#tree" x="420" y="48"/>
+                <use href="#tree" x="440" y="52"/>
+                <use href="#tree" x="460" y="50"/>
+                <use href="#tree" x="410" y="68"/>
+                <use href="#tree" x="430" y="70"/>
+                <use href="#tree" x="450" y="67"/>
+                <use href="#tree" x="405" y="88"/>
+                <use href="#tree" x="425" y="92"/>
+                <use href="#tree" x="445" y="88"/>
+                <use href="#tree" x="465" y="85"/>
+
+                <!-- Park 3 (south) -->
+                <rect x="180" y="345" width="95" height="45" rx="4" fill="rgba(115, 171, 150, 0.18)" stroke="rgba(115, 171, 150, 0.4)" stroke-width="1.5"/>
+                <!-- Trees in park 3 -->
+                <use href="#tree" x="195" y="358"/>
+                <use href="#tree" x="215" y="356"/>
+                <use href="#tree" x="235" y="360"/>
+                <use href="#tree" x="255" y="358"/>
+                <use href="#tree" x="205" y="375"/>
+                <use href="#tree" x="225" y="378"/>
+                <use href="#tree" x="245" y="376"/>
+                <use href="#tree" x="265" y="373"/>
+              </g>
+
+              <!-- Roads with bridges -->
+              <!-- Horizontal road (north of river) -->
+              <g>
+                <rect x="0" y="140" width="500" height="12" fill="rgba(200, 200, 200, 0.15)"/>
+                <line x1="0" y1="140" x2="500" y2="140" stroke="rgba(255, 255, 255, 0.25)" stroke-width="1"/>
+                <line x1="0" y1="152" x2="500" y2="152" stroke="rgba(255, 255, 255, 0.25)" stroke-width="1"/>
+                <line x1="0" y1="146" x2="500" y2="146" stroke="rgba(255, 255, 255, 0.15)" stroke-width="1" stroke-dasharray="10,5"/>
+              </g>
+
+              <!-- Horizontal road (south of river) -->
+              <g>
+                <rect x="0" y="320" width="500" height="12" fill="rgba(200, 200, 200, 0.15)"/>
+                <line x1="0" y1="320" x2="500" y2="320" stroke="rgba(255, 255, 255, 0.25)" stroke-width="1"/>
+                <line x1="0" y1="332" x2="500" y2="332" stroke="rgba(255, 255, 255, 0.25)" stroke-width="1"/>
+                <line x1="0" y1="326" x2="500" y2="326" stroke="rgba(255, 255, 255, 0.15)" stroke-width="1" stroke-dasharray="10,5"/>
+              </g>
+
+              <!-- Vertical road 1 (west) with bridge -->
+              <g>
+                <!-- Road segments -->
+                <rect x="135" y="0" width="12" height="235" fill="rgba(200, 200, 200, 0.15)"/>
+                <rect x="135" y="285" width="12" height="115" fill="rgba(200, 200, 200, 0.15)"/>
+
+                <!-- Bridge over river -->
+                <rect x="133" y="235" width="16" height="50" fill="rgba(180, 180, 180, 0.25)" stroke="rgba(200, 200, 200, 0.4)" stroke-width="1.5"/>
+                <line x1="135" y1="237" x2="135" y2="283" stroke="rgba(255, 255, 255, 0.3)" stroke-width="1"/>
+                <line x1="147" y1="237" x2="147" y2="283" stroke="rgba(255, 255, 255, 0.3)" stroke-width="1"/>
+                <line x1="141" y1="237" x2="141" y2="283" stroke="rgba(255, 255, 255, 0.15)" stroke-width="1" stroke-dasharray="8,4"/>
+                <!-- Bridge supports -->
+                <rect x="136" y="240" width="2" height="15" fill="rgba(150, 150, 150, 0.3)"/>
+                <rect x="144" y="240" width="2" height="15" fill="rgba(150, 150, 150, 0.3)"/>
+                <rect x="136" y="268" width="2" height="15" fill="rgba(150, 150, 150, 0.3)"/>
+                <rect x="144" y="268" width="2" height="15" fill="rgba(150, 150, 150, 0.3)"/>
+
+                <!-- Road edges (non-bridge sections) -->
+                <line x1="135" y1="0" x2="135" y2="235" stroke="rgba(255, 255, 255, 0.25)" stroke-width="1"/>
+                <line x1="147" y1="0" x2="147" y2="235" stroke="rgba(255, 255, 255, 0.25)" stroke-width="1"/>
+                <line x1="141" y1="0" x2="141" y2="235" stroke="rgba(255, 255, 255, 0.15)" stroke-width="1" stroke-dasharray="10,5"/>
+                <line x1="135" y1="285" x2="135" y2="400" stroke="rgba(255, 255, 255, 0.25)" stroke-width="1"/>
+                <line x1="147" y1="285" x2="147" y2="400" stroke="rgba(255, 255, 255, 0.25)" stroke-width="1"/>
+                <line x1="141" y1="285" x2="141" y2="400" stroke="rgba(255, 255, 255, 0.15)" stroke-width="1" stroke-dasharray="10,5"/>
+              </g>
+
+              <!-- Vertical road 2 (east) with bridge -->
+              <g>
+                <!-- Road segments -->
+                <rect x="355" y="0" width="12" height="210" fill="rgba(200, 200, 200, 0.15)"/>
+                <rect x="355" y="260" width="12" height="140" fill="rgba(200, 200, 200, 0.15)"/>
+
+                <!-- Bridge over river -->
+                <rect x="353" y="210" width="16" height="50" fill="rgba(180, 180, 180, 0.25)" stroke="rgba(200, 200, 200, 0.4)" stroke-width="1.5"/>
+                <line x1="355" y1="212" x2="355" y2="258" stroke="rgba(255, 255, 255, 0.3)" stroke-width="1"/>
+                <line x1="367" y1="212" x2="367" y2="258" stroke="rgba(255, 255, 255, 0.3)" stroke-width="1"/>
+                <line x1="361" y1="212" x2="361" y2="258" stroke="rgba(255, 255, 255, 0.15)" stroke-width="1" stroke-dasharray="8,4"/>
+                <!-- Bridge supports -->
+                <rect x="356" y="215" width="2" height="12" fill="rgba(150, 150, 150, 0.3)"/>
+                <rect x="364" y="215" width="2" height="12" fill="rgba(150, 150, 150, 0.3)"/>
+                <rect x="356" y="246" width="2" height="12" fill="rgba(150, 150, 150, 0.3)"/>
+                <rect x="364" y="246" width="2" height="12" fill="rgba(150, 150, 150, 0.3)"/>
+
+                <!-- Road edges (non-bridge sections) -->
+                <line x1="355" y1="0" x2="355" y2="210" stroke="rgba(255, 255, 255, 0.25)" stroke-width="1"/>
+                <line x1="367" y1="0" x2="367" y2="210" stroke="rgba(255, 255, 255, 0.25)" stroke-width="1"/>
+                <line x1="361" y1="0" x2="361" y2="210" stroke="rgba(255, 255, 255, 0.15)" stroke-width="1" stroke-dasharray="10,5"/>
+                <line x1="355" y1="260" x2="355" y2="400" stroke="rgba(255, 255, 255, 0.25)" stroke-width="1"/>
+                <line x1="367" y1="260" x2="367" y2="400" stroke="rgba(255, 255, 255, 0.25)" stroke-width="1"/>
+                <line x1="361" y1="260" x2="361" y2="400" stroke="rgba(255, 255, 255, 0.15)" stroke-width="1" stroke-dasharray="10,5"/>
+              </g>
+            </svg>
+
+            <!-- Placement grid (invisible) -->
+            <div class="placement-grid" id="placement-grid"></div>
+          </div>
+
+          <!-- Controls -->
+          <div class="city-controls">
+            <button class="city-reset" id="city-reset">Reset</button>
+          </div>
+        </div>
       </div>
 
-      <div class="alliance text-center py-7 px-10 rounded-[16px]" data-animate>
-        <p class="text-[15px] font-light text-gray-text max-w-[560px] mx-auto">Oxford YIMBY is part of the <a href="https://yimbyalliance.org" target="_blank" rel="noopener" class="font-bold text-teal hover:text-teal-dark">YIMBY Alliance</a> — a national movement campaigning to end the housing crisis by building more homes across the UK.</p>
+      <!-- Glassmorphism cards -->
+      <div class="solution-cards">
+        <div class="principle-card" data-animate>
+          <h3>Build up &amp; out</h3>
+          <p>Allow the city to expand and meet need so that more people can live near jobs, universities and public transport, instead of being priced out or pushed far beyond the city's reach.</p>
+        </div>
+        <div class="principle-card" data-animate>
+          <h3>Homes for everyone</h3>
+          <p>More housing means more choice, for students, families, key workers, and everyone who wants to call Oxford home.</p>
+        </div>
+        <div class="principle-card" data-animate>
+          <h3>Growth is good</h3>
+          <p>A growing Oxford means more jobs, stronger local businesses, better public services, and a more vibrant city for everyone.</p>
+        </div>
+      </div>
+
+      <!-- Animated Icon Banner (6 sets × 3 icons = ~3096px total, covers all screen sizes) -->
+      <div class="icon-banner">
+        <div class="icon-banner-track">
+          <div class="icon-banner-set">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="4" y="4" width="16" height="14" rx="2"/><path d="M4 11h16M8 18v3m8-3v3"/><circle cx="8" cy="15" r="1"/><circle cx="16" cy="15" r="1"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="5.5" cy="17.5" r="3.5"/><circle cx="18.5" cy="17.5" r="3.5"/><path d="M15 6a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm-3 11.5V14l-3-3 4-3 2 3h3"/></svg>
+          </div>
+          <div class="icon-banner-set">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="4" y="4" width="16" height="14" rx="2"/><path d="M4 11h16M8 18v3m8-3v3"/><circle cx="8" cy="15" r="1"/><circle cx="16" cy="15" r="1"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="5.5" cy="17.5" r="3.5"/><circle cx="18.5" cy="17.5" r="3.5"/><path d="M15 6a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm-3 11.5V14l-3-3 4-3 2 3h3"/></svg>
+          </div>
+          <div class="icon-banner-set">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="4" y="4" width="16" height="14" rx="2"/><path d="M4 11h16M8 18v3m8-3v3"/><circle cx="8" cy="15" r="1"/><circle cx="16" cy="15" r="1"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="5.5" cy="17.5" r="3.5"/><circle cx="18.5" cy="17.5" r="3.5"/><path d="M15 6a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm-3 11.5V14l-3-3 4-3 2 3h3"/></svg>
+          </div>
+          <div class="icon-banner-set">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="4" y="4" width="16" height="14" rx="2"/><path d="M4 11h16M8 18v3m8-3v3"/><circle cx="8" cy="15" r="1"/><circle cx="16" cy="15" r="1"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="5.5" cy="17.5" r="3.5"/><circle cx="18.5" cy="17.5" r="3.5"/><path d="M15 6a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm-3 11.5V14l-3-3 4-3 2 3h3"/></svg>
+          </div>
+          <div class="icon-banner-set">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="4" y="4" width="16" height="14" rx="2"/><path d="M4 11h16M8 18v3m8-3v3"/><circle cx="8" cy="15" r="1"/><circle cx="16" cy="15" r="1"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="5.5" cy="17.5" r="3.5"/><circle cx="18.5" cy="17.5" r="3.5"/><path d="M15 6a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm-3 11.5V14l-3-3 4-3 2 3h3"/></svg>
+          </div>
+          <div class="icon-banner-set">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="4" y="4" width="16" height="14" rx="2"/><path d="M4 11h16M8 18v3m8-3v3"/><circle cx="8" cy="15" r="1"/><circle cx="16" cy="15" r="1"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="5.5" cy="17.5" r="3.5"/><circle cx="18.5" cy="17.5" r="3.5"/><path d="M15 6a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm-3 11.5V14l-3-3 4-3 2 3h3"/></svg>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- Wave divider: solution → cta -->
-  <div class="divider divider--cta">
-    <svg viewBox="0 0 1440 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M0,30 C480,60 960,0 1440,30 L1440,60 L0,60 Z" fill="currentColor"/>
-    </svg>
+  <!-- Alliance callout -->
+  <div class="alliance-wrap">
+    <div class="container">
+      <div class="alliance" data-animate>
+        <p>Oxford YIMBY is part of the <a href="https://yimbyalliance.org" target="_blank" rel="noopener">YIMBY Alliance</a> — a national movement campaigning to end the housing crisis by building more homes across the UK.</p>
+      </div>
+    </div>
   </div>
 
   <!-- Join -->
-  <section class="section--cta py-[110px] bg-linear-to-br from-teal-subtle via-white to-off-white relative overflow-hidden max-md:py-20" id="join">
-    <div class="max-w-[1140px] mx-auto px-6">
-      <div class="cta-content relative z-[1] text-center max-w-[520px] mx-auto" data-animate>
-        <h2 class="text-[clamp(32px,4.5vw,48px)] font-black text-charcoal tracking-[-0.02em] mb-4">Join the movement</h2>
-        <p class="text-lg font-light text-gray-text mb-10 leading-[1.7]">Sign up to get campaign updates and find out how you can help make Oxford affordable.</p>
+  <section class="section section--cta" id="join">
+    <!-- Floating home icons -->
+    <div class="cta-icon-field" aria-hidden="true">
+      <svg style="left:6%;top:14%;width:48px;--rot:-18deg;--delay:0.05s;--op:0.18" viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+      <svg style="left:81%;top:9%;width:36px;--rot:14deg;--delay:0.15s;--op:0.14" viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+      <svg style="left:2%;top:54%;width:58px;--rot:-10deg;--delay:0.2s;--op:0.11" viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+      <svg style="left:88%;top:46%;width:44px;--rot:16deg;--delay:0.1s;--op:0.16" viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+      <svg style="left:13%;top:76%;width:40px;--rot:-22deg;--delay:0.25s;--op:0.13" viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+      <svg style="left:77%;top:73%;width:52px;--rot:9deg;--delay:0.3s;--op:0.17" viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+      <svg style="left:53%;top:5%;width:32px;--rot:6deg;--delay:0.35s;--op:0.12" viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+    </div>
+    <div class="container">
+      <div class="cta-content" data-animate>
+        <h2 class="cta-title">Join the movement</h2>
+        <p class="cta-subtitle">Sign up to get campaign updates and find out how you can help make Oxford affordable.</p>
 
-        <div class="max-w-[440px] mx-auto">
-          <form action="https://oxfordyimby.us2.list-manage.com/subscribe/post?u=ed3bef3a68d92194b717fecc5&amp;id=6c385188a0" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form">
-            <div class="form-row flex gap-2.5 p-1.5 rounded-full">
-              <label for="mce-EMAIL" class="sr-only">Email address</label>
-              <input id="mce-EMAIL" type="email" name="EMAIL" placeholder="Your email address" required autocomplete="email">
+        <div class="signup-form">
+          <!-- Mailchimp Embedded Form -->
+          <form action="https://oxfordyimby.us2.list-manage.com/subscribe/post?u=ed3bef3a68d92194b717fecc5&amp;id=6c385188a0" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" target="_blank" novalidate>
+            <div class="form-row">
+              <input type="email" name="EMAIL" placeholder="Your email address" required aria-label="Email address">
               <button type="submit" name="subscribe">Sign up</button>
             </div>
-            <!-- Mailchimp honeypot — must remain empty -->
-            <div aria-hidden="true" class="absolute left-[-5000px]">
+            <!-- Bot prevention -->
+            <div style="position: absolute; left: -5000px;" aria-hidden="true">
               <input type="text" name="b_ed3bef3a68d92194b717fecc5_6c385188a0" tabindex="-1" value="">
             </div>
           </form>
-          <p id="signup-message" class="signup-message" role="status" aria-live="polite"></p>
-          <p class="text-[13px] text-gray-text mt-4">No spam. Unsubscribe anytime.</p>
+          <p class="signup-note">No spam. Unsubscribe anytime.</p>
         </div>
       </div>
     </div>
   </section>
 
   <!-- Footer -->
-  <footer class="bg-charcoal pt-16">
-    <div class="max-w-[1140px] mx-auto px-6">
-      <div class="grid grid-cols-[1.5fr_2fr] gap-[60px] pb-12 border-b border-white/[0.08] max-[960px]:grid-cols-1 max-[960px]:gap-10">
-        <div>
-          <a href="#hero" class="text-[17px] font-black tracking-[0.06em] text-white uppercase inline-block mb-3 hover:text-white">OXFORD <span class="text-teal">YIMBY</span></a>
-          <p class="text-sm font-light text-white/70">Campaigning for more homes in Oxford.</p>
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <a href="#" class="footer-logo">OXFORD <span>YIMBY</span></a>
+          <p>Campaigning for more homes in Oxford.</p>
         </div>
-        <div class="grid grid-cols-3 gap-8 max-md:grid-cols-2 max-md:gap-6 max-[480px]:grid-cols-1">
+        <div class="footer-links">
           <div class="footer-col">
-            <h4 class="text-[11px] font-bold tracking-[0.15em] uppercase text-white/70 mb-4">Follow us</h4>
-            <a href="https://x.com/oxfordyimby" target="_blank" rel="noopener" class="block text-sm font-normal text-white/80 mb-2.5">X / Twitter</a>
+            <h4>Follow us</h4>
+            <a href="https://x.com/oxfordyimby" target="_blank" rel="noopener">X / Twitter</a>
           </div>
           <div class="footer-col">
-            <h4 class="text-[11px] font-bold tracking-[0.15em] uppercase text-white/70 mb-4">Links</h4>
-            <a href="https://yimbyalliance.org" target="_blank" rel="noopener" class="block text-sm font-normal text-white/80 mb-2.5">YIMBY Alliance</a>
-            <a href="/privacy.html" class="block text-sm font-normal text-white/80 mb-2.5">Privacy Policy</a>
+            <h4>Links</h4>
+            <a href="https://yimbyalliance.org" target="_blank" rel="noopener">YIMBY Alliance</a>
+            <a href="privacy-policy.html">Privacy Policy</a>
           </div>
           <div class="footer-col">
-            <h4 class="text-[11px] font-bold tracking-[0.15em] uppercase text-white/70 mb-4">Contact</h4>
-            <a href="mailto:james@yimbyalliance.org" class="block text-sm font-normal text-white/80 mb-2.5">james@yimbyalliance.org</a>
+            <h4>Contact</h4>
+            <a href="mailto:james@yimbyalliance.org">james@yimbyalliance.org</a>
           </div>
         </div>
       </div>
-      <div class="py-6">
-        <p class="text-[13px] text-white/70">&copy; 2026 Oxford YIMBY. All rights reserved.</p>
-        <p class="mt-1.5 text-xs text-white/60">Photos via <a href="https://unsplash.com" target="_blank" rel="noopener" class="text-white/80 hover:text-white">Unsplash</a> (CC)</p>
+      <div class="footer-sources">
+        <h4>Sources</h4>
+        <div class="footer-sources-list">
+          <a href="https://www.bbc.co.uk/news/articles/cyvyjyzzprvo" target="_blank" rel="noopener">BBC: Oxford rents rise faster than anywhere else in UK</a>
+          <a href="https://www.ons.gov.uk/visualisations/housingpriceslocal/E07000178/#rent_price" target="_blank" rel="noopener">ONS: Housing prices and rents in Oxford</a>
+          <a href="https://www.schroders.com/en-gb/uk/individual/insights/what-174-years-of-data-tell-us-about-house-price-affordability-in-the-uk/" target="_blank" rel="noopener">Schroders: 174 years of UK house price affordability</a>
+          <a href="https://www.ons.gov.uk/peoplepopulationandcommunity/housing/bulletins/housingaffordabilityinenglandandwales/2024" target="_blank" rel="noopener">ONS: Housing affordability in England and Wales: 2024</a>
+          <a href="https://www.oxford.gov.uk/planning-policy/authority-monitoring-report-2024-25/4" target="_blank" rel="noopener">Oxford City Council: Authority Monitoring Report 2024-25</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Oxford YIMBY. All rights reserved.</p>
       </div>
     </div>
   </footer>

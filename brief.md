@@ -1,172 +1,136 @@
-# Oxford YIMBY Website — Project Brief
+# Oxford YIMBY Website — Improvement Brief
 
-## Project Overview
+**Date:** February 2026
+**Status:** Ready to build
 
-A complete rebuild of the Oxford YIMBY website (oxfordyimby.org) — replacing the current bare-bones WordPress site with a modern, bold, single-page static site that makes a compelling data-driven case for building more homes in Oxford and converts visitors into mailing list subscribers.
+---
 
-The current site has broken pages, no navigation, a generic WordPress theme, and almost no content. The new site will be a sharp, professional campaign page with interactive data visualisations that tell the story of Oxford's housing crisis.
+## 1. Project Overview
 
-## Goals & Success Metrics
+Oxford YIMBY is a campaign site for the Oxford chapter of the YIMBY Alliance, calling for more homes to be built in Oxford to tackle the city's housing crisis. The site already exists and is well-structured. This brief covers a focused round of improvements to make it feel more polished and more compelling — specifically targeting the Solution section and the signup CTA.
 
-- **Primary goal:** Grow the mailing list. Every section of the page should ultimately drive toward the email signup.
-- **Secondary goal:** Educate visitors on why Oxford needs more housing, using data — not just rhetoric.
-- **Success looks like:**
-  - Significant increase in mailing list signups (track via Mailchimp)
-  - Visitors spending more time on the page (engaged with data viz)
-  - A site that looks credible enough to share with councillors, journalists, and potential allies
+The primary goal is conversion: getting more people to sign up to the mailing list. The improvements should also make the site feel more credibly local, grounded in Oxford specifically rather than generic campaigning.
 
-## Out of Scope
+---
 
-- Blog or news section (not needed for a rarely-updated campaign site)
-- The three outdated campaign projects (North Oxford Golf Club, Bayswater Brook, Oxford Science Park) — remove these
-- Donation functionality
-- User accounts or login
-- CMS or admin panel — content is updated by editing HTML/code directly
-- Party-political affiliations (mention YIMBY Alliance only, not Labour Club)
+## 2. Goals & Success Metrics
 
-## Target Users
+- **More email signups** — the redesigned CTA section should increase Mailchimp signup rate
+- **More credible first impression** — local Oxford photography makes the campaign feel real and rooted
+- **No structural changes** — all improvements are on the existing single-page site
 
-1. **Oxford residents frustrated by housing costs** — renters and would-be buyers priced out of the city. They feel the pain but may not understand why it's happening. The site needs to give them the "aha" moment: we don't build enough homes.
+---
 
-2. **Potential supporters & volunteers** — people sympathetic to the cause who might sign up, share on social media, or attend events. They need to feel like Oxford YIMBY is credible and effective.
+## 3. Out of Scope
 
-3. **Decision-makers who get sent the link** — councillors, journalists, planners. The site needs to look professional enough that sharing it strengthens rather than undermines the argument.
+- No new pages or multi-page navigation
+- No blog, news feed, or content management system
+- No changes to the hero, stats bar, or Problem/charts section (these are working well)
+- No login, accounts, or backend infrastructure
+- No major content rewrites — copy stays largely as-is
 
-## Key User Flow
+---
 
-There is one flow, and it's simple:
+## 4. Target Users
 
-1. Visitor lands on the page (from social media, a link in an email, or search)
-2. Hero section immediately communicates what Oxford YIMBY is and hooks them emotionally
-3. They scroll through data visualisations that tell the story of Oxford's housing crisis
-4. They reach a clear call-to-action: join the mailing list
-5. They sign up via an embedded Mailchimp form
-6. They optionally follow Oxford YIMBY on social media via links
+| Audience | What they need from these improvements |
+|---|---|
+| Oxford residents | To feel the campaign is genuinely local, not generic |
+| Potential supporters | To be moved to act — to sign up or share |
+| Press & decision-makers | To see a credible, professionally-designed campaign |
 
-## Screens / Pages
+All three audiences benefit from the same two improvements: authentic local imagery and a CTA that signals momentum.
 
-**Single scrollable page with these sections (top to bottom):**
+---
 
-### 1. Hero Section
-- Bold headline (e.g., "Oxford has a housing crisis. We're here to fix it.")
-- One-sentence subheading explaining what Oxford YIMBY is
-- Prominent "Join us" button that scrolls to the signup form
-- Clean, impactful — no clutter
+## 5. Improvements
 
-### 2. The Problem — Data Visualisation Section
-Three interactive/animated data visualisations that build the case:
+### Improvement 1: Solution Section — Local Oxford Photography
 
-**Viz 1: Rent & House Price Trends**
-- Show how Oxford rents and house prices have risen over the last 10-20 years
-- Animated line chart that draws on scroll or on load
-- Key stat callout (e.g., "Rent has risen 50% in 10 years")
+**Problem:** The Solution section's three principle cards feel generic. The icons are abstract, the descriptions are short, and nothing signals "this is Oxford" rather than any UK city.
 
-**Viz 2: Oxford vs Other Cities**
-- Compare Oxford's affordability against comparable UK cities
-- Bar chart or dot plot showing price-to-income ratios
-- Makes the point: Oxford is an outlier, and it doesn't have to be
+**Fix:** Source high-quality Creative Commons photographs of Oxford terraces and residential streets — the kind of human-scale, attractive housing that YIMBY wants more of. Integrate these images into or around the principle cards.
 
-**Viz 3: The Housing Supply Gap**
-- Show the gap between homes needed and homes actually built each year
-- Area chart or stacked bar showing the cumulative deficit growing
-- The emotional hook: "Every year we fall further behind"
+**Why this works:** Showing beautiful existing Oxford terraces makes the argument visually. "We want more of this, and it fits right in" is more persuasive than "Build up & out" in the abstract.
 
-Each viz should have a short, punchy heading and 1-2 sentences of context. The data tells the story — the text just frames it.
+**Image sourcing:**
+- Source: Wikimedia Commons, Geograph.org.uk (reliably CC-BY-SA), Flickr (check per image)
+- Target areas: Jericho, East Oxford terraces, Cowley Road area, Iffley Road
+- Criteria: attractive terraced streets, human scale, clearly Oxford, not tower blocks or countryside
+- Licence: CC-BY or CC-BY-SA only — credit must appear on the site
+- Quantity: 2–3 strong images
 
-### 3. The Solution — What Is YIMBY?
-- Brief, plain-language explanation: we support building more homes
-- 2-3 key principles (e.g., "Build up and out", "Homes for everyone", "Beautiful density is possible")
-- Mention affiliation with YIMBY Alliance as a national movement
-- Keep it short — this isn't a manifesto, it's a pitch
+**Integration options (pick one):**
+- A) Replace card icons with cropped, rounded Oxford terrace photos
+- B) Add a full-width image strip between the principle cards and the YIMBY Alliance callout
+- C) Use a single large hero-style image as a background for the whole Solution section
 
-### 4. Call to Action — Join Us
-- Embedded Mailchimp signup form (name + email, nothing more)
-- Compelling copy: why joining matters, what they'll get (campaign updates, ways to help)
-- This should feel like the natural conclusion of the page
+Recommendation: Option B — an image strip. It adds visual interest without redesigning the card layout.
 
-### 5. Footer
-- Social media links (X/Twitter, others as applicable)
-- Link to YIMBY Alliance
-- Privacy policy link
-- Simple, clean — no bloat
+---
 
-## Information Architecture
+### Improvement 2: Signup / CTA Section — Bold Redesign
 
-This is a simple site — no complex data model. The "things" in the system are:
+**Problem:** The current "Join the movement" section is clean but forgettable. A plain centred form on a light gradient background doesn't create a moment of action — it just sits there.
 
-- **The page itself** — static HTML, updated by editing code
-- **Data for visualisations** — likely JSON or CSV files stored alongside the code, sourced from ONS, Land Registry, or similar public datasets
-- **Mailing list** — managed entirely by Mailchimp, not on the site itself
+**Fix:** Redesign this section to feel like the emotional climax of the page. Dark background, big bold copy, social proof counter, and a subtle interactive element.
 
-## Integrations
+**Recommended direction:**
 
-- **Mailchimp** — embedded signup form using their existing account (list ID: `6c385188a0`, user ID: `ed3bef3a68d92194b717fecc5`)
-- **GitHub Pages** — hosting and deployment (push to `main` branch to deploy)
-- **Social media** — outbound links to X/Twitter (@OxfordYIMBY) and any other active profiles
+- **Background:** Full-width dark section (charcoal `#353741` or near-black) — contrasts with the light sections above and creates a visual stop
+- **Headline:** Keep "Join the movement" or upgrade to something more urgent: *"Oxford needs you."*
+- **Social proof counter:** *"Join [X] people demanding change"* — animated count-up when the section enters view. Hardcode a believable number initially (e.g. 340), update manually when the list grows.
+- **Form:** Single email input + "Sign up" button. Large, centred, high-contrast (white input on dark bg).
+- **Subtext:** "No spam. Unsubscribe anytime." — keep this, it reduces friction.
+- **Animated background:** Subtle particle or gradient pulse effect — tasteful, not distracting. Should degrade gracefully on mobile (disable or reduce on small screens).
+- **Secondary actions (optional):** Two small text links below the form: "Follow us on X →" and "Share this page →"
 
-## Design Direction
+**Interactive elements to implement:**
+1. Animated number counter that ticks up when section scrolls into view (extend the existing counter logic)
+2. Subtle CSS or canvas-based background animation
+3. Inline form success state — friendly confirmation message without page reload
 
-**Bold + clean, but not corporate.**
+---
 
-- **Typography:** One strong sans-serif font. Big, confident headings. Think campaign poster meets data journalism.
-- **Colors:** A striking primary color (suggest a deep teal, bold blue, or warm orange — something that pops against white but feels trustworthy, not garish). High contrast. Dark text on light backgrounds for readability.
-- **Layout:** Generous whitespace. Full-width sections with alternating backgrounds. Data visualisations should breathe — don't crowd them.
-- **Data viz style:** Clean, modern charts. No 3D effects, no chart junk. Think Financial Times data journalism — minimal, precise, impactful. Subtle animations on scroll.
-- **Imagery:** Minimal. Let the data and typography do the work. If photos are used, they should be real photos of Oxford — not stock photography.
-- **Mobile:** Must work beautifully on phones. Data visualisations should be responsive and still readable on small screens.
-- **Overall feel:** "A serious campaign backed by evidence" — not "a student project" and not "a corporate rebrand."
+## 6. Phase 1 (Do Now)
 
-**Reference sites for inspiration:**
-- Shelter (shelter.org.uk) — bold activist energy
-- Our World in Data — clean data presentation
-- Generation Rent — campaign clarity
+1. Find and verify 2–3 Creative Commons Oxford terrace images
+2. Add image credits to the footer
+3. Integrate images into the Solution section (image strip approach)
+4. Redesign the CTA/Join section with dark background, counter, and animated elements
 
-## Phase 1 (MVP) — What We're Building
+**Do not touch:** hero, stats bar, charts, footer structure, nav.
 
-Everything described above is Phase 1. It's intentionally small:
+---
 
-- Single static HTML page with CSS and vanilla JavaScript
-- 3 data visualisations using a lightweight charting library (recommend Chart.js or D3.js — Chart.js is simpler and sufficient for these chart types)
-- Embedded Mailchimp form
-- Social media links
-- Hosted on GitHub Pages
-- Fully responsive (mobile-first)
-- New visual identity (logo, colors, typography)
+## 7. Phase 2+ (Future, Not Now)
 
-**This is the whole site.** No blog, no CMS, no backend. Keep it lean.
+Deliberately deferred:
 
-## Phase 2+ (Future)
+- **Local stories / testimonials** — real quotes from Oxford residents; high impact but requires collecting content
+- **Team / About section** — faces and names build trust, but needs photos and bios
+- **Specific policy asks** — sharper demands ("rezone X", "support Y development") need political sign-off
+- **Blog / news section** — good for SEO but requires ongoing content effort
+- **Live Mailchimp subscriber count** — would require API integration; hardcoded number is fine for now
 
-Features deliberately deferred — revisit only when there's a clear need:
+---
 
-1. **Campaign-specific pages** — when Oxford YIMBY takes on specific projects again, add dedicated subpages
-2. **Blog / news section** — if regular content publishing becomes a priority, consider a static site generator (11ty, Hugo) to add markdown-based posts
-3. **Event listings** — if in-person events become regular
-4. **"Write to your councillor" tool** — high impact but significant build effort
-5. **Interactive map** — showing proposed development sites or housing density across Oxford
-6. **Donation integration** — if fundraising becomes a priority
+## 8. Risks & Open Questions
 
-## Risks & Open Questions
+| Risk | Mitigation |
+|---|---|
+| Image licensing | Verify CC licence on every image before use. Geograph is reliably CC-BY-SA. Flickr requires checking per image. Keep a record of source URLs and licences. |
+| Subscriber counter accuracy | Hardcode a number for now. Don't claim a higher number than the actual Mailchimp list. |
+| Animations on mobile | All animation must degrade gracefully. Test on real devices. Parallax and canvas effects should be disabled or simplified below 768px. |
+| Hero image | `img/radcliffe-1.jpg` is referenced in the HTML — confirm this file exists and loads correctly before deploying. |
 
-1. **Data sourcing** — Where exactly will the data for the visualisations come from? Need to identify specific datasets (ONS, Land Registry, Oxford City Council) and confirm they're publicly available and up to date. **This is the biggest blocker — resolve before building.**
+---
 
-2. **Data accuracy** — The current site claims "rent has risen 50% in 10 years." Need to verify this and all stats used. Getting data wrong would undermine credibility.
+## 9. Practical Notes
 
-3. **Logo & brand design** — Starting fresh means someone needs to design a new logo. Options:
-   - Commission a designer (cost: probably a few hundred pounds)
-   - Use a strong typographic logo (just the name in a distinctive font — free and often more effective)
-   - **I'd recommend the typographic approach for Phase 1** — fast, cheap, and avoids the risk of a bad logo
-
-4. **Mailchimp form styling** — Mailchimp's default embedded forms look ugly. Will need custom CSS to match the site's design.
-
-5. **Chart library choice** — Chart.js is simpler but less flexible. D3.js is more powerful but harder to maintain for non-developers. **Recommend Chart.js** unless you need highly custom visualisations.
-
-6. **Domain & DNS** — oxfordyimby.org needs to point to GitHub Pages instead of the current WordPress host. This is straightforward but needs to be coordinated so there's no downtime.
-
-## Practical Notes
-
-- **Budget:** Near zero. Static hosting on GitHub Pages is free. The only potential costs are a domain name (already owned) and optionally a logo designer.
-- **Team:** Assuming one developer (you) building and maintaining the site.
-- **Maintenance:** Minimal. Data visualisations may need updating annually with new figures. Mailchimp form is self-maintaining. No server, no database, no CMS to patch.
-- **Timeline:** This is a small site. The main time investment is sourcing and cleaning the data for visualisations, and designing the visual identity.
-- **Deployment:** Push to `main` branch on GitHub, GitHub Pages auto-deploys. Anyone with repo access can update the site.
+- **Stack:** Vanilla JS + Vite + Chart.js. Keep all improvements within this stack — no new frameworks.
+- **Brand colours:** Teal `#73AB96`, Charcoal `#353741`, Rose `#BE93A3`. All new elements must use these.
+- **Font:** Lato (already loaded) — no new fonts needed.
+- **Image credits:** Add a small "Photo credits" line in the footer footer for CC images, with links to original sources as required by licence.
+- **Deployment:** Static site on GitHub Pages. Push to `main` to deploy.
+- **Maintenance:** No server or CMS. Content updates require editing HTML/CSS/JS directly. Image credits may need updating if images are changed.
