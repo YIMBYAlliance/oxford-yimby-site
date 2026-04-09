@@ -12,6 +12,9 @@ function showMessage(text, state) {
 }
 
 if (form && messageEl) {
+  // JS loaded — remove fallback that opens Mailchimp in a new tab
+  form.removeAttribute('target')
+
   form.addEventListener('submit', (e) => {
     e.preventDefault()
 

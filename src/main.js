@@ -28,17 +28,27 @@ import Chart from 'chart.js/auto'
   window.addEventListener('scroll', updateNav, { passive: true });
   updateNav();
 
+  function setMenuOpen(open) {
+    document.body.style.overflow = open ? 'hidden' : '';
+    navToggle.setAttribute('aria-expanded', String(open));
+    if (open) {
+      mobileMenu.setAttribute('role', 'dialog');
+      mobileMenu.setAttribute('aria-modal', 'true');
+    } else {
+      mobileMenu.removeAttribute('role');
+      mobileMenu.removeAttribute('aria-modal');
+    }
+  }
+
   navToggle.addEventListener('click', function () {
     mobileMenu.classList.toggle('active');
-    var isOpen = mobileMenu.classList.contains('active');
-    document.body.style.overflow = isOpen ? 'hidden' : '';
-    navToggle.setAttribute('aria-expanded', String(isOpen));
+    setMenuOpen(mobileMenu.classList.contains('active'));
   });
 
   mobileMenu.querySelectorAll('a').forEach(function (link) {
     link.addEventListener('click', function () {
       mobileMenu.classList.remove('active');
-      document.body.style.overflow = '';
+      setMenuOpen(false);
     });
   });
 
