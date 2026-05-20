@@ -1,7 +1,9 @@
 # Oxford YIMBY Website — Improvement Brief
 
+> **Archived 2026-05-20.** This Phase 1 redesign was scoped in February 2026 but never shipped. The site as it stands at archive time already incorporates the parts that mattered (Mark III redesign, data visualisations, inline signup). Anything still useful here is reference material only — treat the brief as historical context, not a live spec.
+
 **Date:** February 2026
-**Status:** Ready to build
+**Status:** Archived (was: Ready to build)
 
 ---
 

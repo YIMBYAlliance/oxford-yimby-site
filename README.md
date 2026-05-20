@@ -41,7 +41,7 @@ You'll mostly do this by asking Claude Code in this folder. A typical flow:
 - **Don't change the Mailchimp form URL** (the long `oxfordyimby.us2.list-manage.com/subscribe/post?u=…&id=…` in `index.html`). Editing or breaking that string sends signups into the void. If you ever need a new list, replace the URL in *one* place and test that an email arrives in Mailchimp before pushing.
 - **Push access to `main` goes through a YIMBY Alliance central admin.** The Oxford chapter doesn't merge directly — open a PR and ping the YA admin to review and merge. Vercel does the rest.
 - **Chart numbers are stored as plain arrays inside `src/main.js`.** Updating them requires editing JavaScript by hand (Claude can do this). There's no spreadsheet or pipeline behind them.
-- **The `brief.md` file in the root is paused.** It describes a Phase 1 redesign (Oxford photography + bolder CTA section) that was scoped but not shipped. Don't treat it as a live spec — if someone asks you to revive that work, re-read the brief, but don't assume it's still authoritative.
+- **`_archive/brief.md` is archived (2026-05-20).** It described a Phase 1 redesign (Oxford photography + bolder CTA section) that was scoped Feb 2026 and never shipped. Kept as reference material; don't treat it as a live spec.
 
 ## Running it locally
 
@@ -102,7 +102,7 @@ If you're stuck, ask Claude Code: "investigate why X isn't working in this proje
 
 ## Open questions / known issues
 
-- **`brief.md` Phase 1 is deferred.** Oxford photography integration and the redesigned CTA section described in that file were scoped but not shipped. Decide whether to revive or delete the brief.
+- **`_archive/brief.md` Phase 1 is archived (2026-05-20).** Oxford photography integration and the redesigned CTA section described in that file were scoped but not shipped. Moved under `_archive/` to make the dormant status obvious; revive only on explicit request.
 - **Chart data is manual.** Rent figures, city comparisons, and housebuilding numbers all need updating by hand each year. There's no upstream pipeline.
 - **No analytics.** The site doesn't track visitors. If signup-rate measurement matters, that needs adding.
 - **No automated tests.** Every change is reviewed by eye.

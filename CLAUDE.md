@@ -33,7 +33,7 @@ Single-page static campaign site for the Oxford chapter of the YIMBY Alliance. V
 - **Chart data is duplicated between content and code.** Numbers shown in body copy near the charts must be kept in sync with the arrays in `src/main.js` by hand.
 - **Mobile menu toggles `body.style.overflow`.** Setting it elsewhere can leave the page un-scrollable.
 - **No router.** Navigation is anchor links (`#problem`, `#solution`, etc.) with smooth-scroll JS that offsets by `nav.offsetHeight`. Adding a section means adding the anchor and updating nav links in both desktop and mobile menus.
-- **`brief.md` is a paused spec, not active work.** Don't auto-implement from it. If a task references it, confirm with the user that the brief is being revived.
+- **`_archive/brief.md` is an archived spec, not active work.** A Phase 1 redesign scoped Feb 2026 and never shipped; archived 2026-05-20. Don't auto-implement from it.
 - **`affordabilityratios.xlsx` and `rentsovertime.csv` in the repo root are source data the user pulled chart numbers from.** They're not loaded at runtime. Treat them as reference material.
 - **Chart 3 (`createSupplyChart`) renders housebuilding by year and assumes "1300 homes needed per year" as a flat target.** That's a deliberate editorial choice from the author; check before changing.
 
@@ -97,7 +97,7 @@ The Oxford chapter team using this repo is non-technical. They will mostly direc
 
 4. **Match the existing conventions.** `src/main.js` is intentionally written in older-school vanilla JS — don't refactor to ES modules / classes / frameworks unless asked. New files (e.g. `src/signup.js`) can use modern JS.
 
-5. **Don't add scope.** Fix what was asked. No drive-by refactors, no new dependencies, no "while I'm here" cleanups unless the user asked. Especially: do not pull from `brief.md` unless the user explicitly asks for it.
+5. **Don't add scope.** Fix what was asked. No drive-by refactors, no new dependencies, no "while I'm here" cleanups unless the user asked. Especially: do not pull from `_archive/brief.md` unless the user explicitly asks for it.
 
 6. **Be careful with deployment, secrets, and shared state.**
    - Do not edit the Mailchimp `action` URL without explicit user confirmation and a plan to test.
